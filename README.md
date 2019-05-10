@@ -6,7 +6,7 @@ The usage is very simple
 ./install-python <version> <path>
 ```
 
-*Both _version_ and _path_ are required.
+Both _version_ and _path_ are required.
 
 For example,
 
