@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ "$#" -ne 1 ]; then
+  echo "Usage:"
+  echo "  $ install-python <version>"
+  echo "  $ install-python 3.6.6"
+  exit 1
+fi
+
+export PYTHON_VERSION="$1"
+cd /tmp
+# limpiar instalaciones previas
+rm -rf Python-*
+wget "https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz"
+tar xzf Python-$PYTHON_VERSION.tgz
+cd Python-$PYTHON_VERSION
+#./configure --prefix=/home/leon/app/python/python$PYTHON_VERSION --enable-optimizations
+./configure --prefix=/home/leon/app/python/python$PYTHON_VERSION
+make
+make install
+cd ..
+rm -rf Python-$PYTHON_VERSION*
+cd $PWD
