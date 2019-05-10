@@ -6,7 +6,7 @@ The usage is very simple
 ./install-python <version> <path>
 ```
 
-Both _version_ and _path_ are required.
+*Both _version_ and _path_ are required.
 
 For example,
 
@@ -22,4 +22,12 @@ It will download and install **Python 3.6.8** into the folder _/home/username/py
 
 ```shell
 ./install-python 3.6.8 /some/path/to/install/python
+```
+
+## Running the script without cloning the repo
+
+You can run this script without download/clone it by simply using cURL and trusting me ;-)
+
+```shell
+curl -sL https://raw.githubusercontent.com/leon-domingo/install-python/master/install-python | bash -s X.Y.Z /some/path/to/install/python
 ```

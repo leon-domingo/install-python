@@ -3,7 +3,7 @@
 if [ "$#" -ne 2 ]; then
   echo "Usage:"
   echo "  $ install-python <version> <prefix>"
-  echo "  $ install-python 3.6.6 /path/to/install"
+  echo "  $ install-python 3.6.8 /path/to/install"
   exit 1
 fi
 
@@ -13,10 +13,10 @@ export PYTHON_VERSION="$1"
 export PREFIX=`echo $2 | sed 's/^\(.*\)\/$/\1/g'`
 
 cd /tmp
-# clean previous installations
+# remove previous installations
 rm -rf Python-*
 
-# download from the official site
+# download the specific .tar.gz file from the official site for the given version
 wget "https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz"
 
 # extract
@@ -34,3 +34,4 @@ cd ..
 rm -rf Python-$PYTHON_VERSION*
 
 cd $PWD
+exit
